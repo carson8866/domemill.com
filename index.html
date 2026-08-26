@@ -12,10 +12,10 @@
   <link href="assets/img/logo.webp" rel="icon">
   <link href="assets/img/logo.webp" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <!-- Fonts (大幅精简，提升速度) -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -124,7 +124,8 @@
           <div class="col-lg-5">
             <div class="media-stack" data-aos="zoom-in" data-aos-delay="200">
               <figure class="media primary shadow-sm">
-                <img src="assets/img/features/room (23).webp" class="img-fluid" alt="Premium transparent dome house in a mountain resort">
+                <!-- 核心优化点：加上了 fetchpriority="high" 让浏览器优先加载此图 -->
+                <img src="assets/img/features/room (23).webp" fetchpriority="high" class="img-fluid" alt="Premium transparent dome house in a mountain resort">
               </figure>
               <figure class="media secondary shadow-sm">
                 <img src="assets/img/features/room (26).webp" class="img-fluid" alt="Luxury glamping dome suite with panoramic view">
@@ -1624,8 +1625,9 @@
             <div class="info-item d-flex">
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
+                <!-- 修改电话号码 -->
                 <h3>Call / WhatsApp</h3>
-                <p>+86 (312) 000 0000 <small>(placeholder - add your number)</small></p>
+                <p>+60 1738555562</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -1795,6 +1797,51 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- 新增 WhatsApp 悬浮气泡 -->
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 9999;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe57;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .whatsapp-float i {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+    @media (max-width: 576px) {
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  
+  <a href="https://wa.me/60173855562?text=Hello%20Domemill%2C%20I%27m%20interested%20in%20your%20dome%20houses." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span>Chat with us</span>
+  </a>
 
 </body>
 
