@@ -2,16 +2,28 @@
 <?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- 首页（最重要） -->
   <url>
        <loc>https://domemill.com/</loc>
-       <lastmod>2026-08-26T03:06:14+00:00</lastmod>
+       <lastmod>2026-09-01</lastmod>
        <changefreq>daily</changefreq>
        <priority>1.0000</priority>
   </url>
+
+  <!-- 服务详情页（如果已经有具体内容） -->
   <url>
-       <loc>https://domemill.com/portfolio-details</loc>
-       <lastmod>2026-08-26T03:06:14+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+       <loc>https://domemill.com/service-details.html</loc>
+       <lastmod>2026-09-01</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8000</priority>
   </url>
+
+  <!-- 作品集/项目详情页（如果已经有具体内容） -->
+  <url>
+       <loc>https://domemill.com/portfolio-details.html</loc>
+       <lastmod>2026-09-01</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8000</priority>
+  </url>
+
 </urlset>
